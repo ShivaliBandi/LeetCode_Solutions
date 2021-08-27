@@ -32,26 +32,26 @@ class Solution {
 public:
     int singleNumber(vector<int>& nums) {
         unordered_map<int, int> umap;
-     for(int i=0;i<nums.size();i++)
-     {
-         if (umap.find(nums[i]) == umap.end())
-         {
-              umap[nums[i]]=1;
-         }
-         else
-         {
-             
-             int iret=umap[nums[i]];
-             umap[nums[i]]+=1;
-             
-         }
-     }
-         // Traversing an unordered map
+     for(auto a:nums)
+             umap[a]+=1;
     for (auto x : umap)
-    {
         if(x.second==1)
             return x.first;
+        return 0;
     }
+};
+
+
+#include <unordered_map>
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        unordered_map<int, int> umap;
+     for(auto a:nums)
+             umap[a]+=1;
+    for (auto x : umap)
+        if(x.second==1)
+            return x.first;
         return 0;
     }
 };
