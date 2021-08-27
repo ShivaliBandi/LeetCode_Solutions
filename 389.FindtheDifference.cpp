@@ -50,3 +50,17 @@ public:
 
     }
 };
+
+
+class Solution {
+public:
+    char findTheDifference(string s, string t) {
+           string str=(s+t);
+        char i=0;
+        for(auto x:str)
+           i^=x; 
+        
+      return i;
+
+    }
+};
