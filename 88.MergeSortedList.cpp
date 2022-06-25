@@ -57,3 +57,23 @@ public:
         sort(nums1.begin(),nums1.end());
     }
 };
+
+//june 2022 solution
+void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n){
+     int i=m-1,j=n-1,k=n+m-1;
+    if(n+m==1)
+    {
+        if(n==0)
+            return;
+        else
+            nums1[0]=nums2[0];
+    }
+    else
+    {
+        while(i>=0 && j>=0)
+                nums1[k--]=(nums1[i]<nums2[j])?nums2[j--]:nums1[i--];
+        while(j>=0)
+             nums1[k--]=nums2[j--];
+    }
+   
+}
